@@ -19,3 +19,5 @@
     
 12. If you want to run only translation, you can run using "python3 sathualab_translate.py"
 13. Languages should be input as Google Codes (https://cloud.google.com/translate/docs/languages)
+14. Run Text to Speech using "python3 sathualab_text_to_speech.py"
+15. Run OCR using "python3 sathualab_ocr.py"
