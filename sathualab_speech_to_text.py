@@ -129,16 +129,20 @@ def main():
     else:
         sys.exit(0)
 
+    translate_output_dir = None
+    source_lang_code = None
+    target_lang_codes = None
     # Common inputs
     output_transcribe_dir = input("Enter directory path to store transcripts: ")
     translate = input("Do you want to translate [y/n]: ")
     translate = translate.lower() == "y"
-    translate_output_dir = input("Enter directory path to store the translations: ")
-    source_lang_code = input("Source language (hit enter to autodetect): ")
-    if source_lang_code == "":
-        source_lang_code = None
-    target_lang_codes = input(
-        "Target languages (multiple lang should be comma separated like de, fr): ")
+    if translate:
+        translate_output_dir = input("Enter directory path to store the translations: ")
+        source_lang_code = input("Source language (hit enter to autodetect): ")
+        if source_lang_code == "":
+            source_lang_code = None
+        target_lang_codes = input(
+            "Target languages (multiple lang should be comma separated like de, fr): ")
 
     for audio_file in all_audio_files:
         print(f"Processing audio file: {audio_file}")
